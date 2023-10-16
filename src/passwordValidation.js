@@ -11,15 +11,21 @@ export const checkAscAndDesc = (str) => {
   // Check if there are at least 5 different digits in the input string
   if (matchedElement && [...new Set(matchedElement.join(""))].length > 4) {
     // Extract the last 3 unique digits from the combined sequences and store them in 'a'
-    let a = [...new Set(matchedElement.join(""))].slice(-3);
+    let firstNumbers = [...new Set(matchedElement.join(""))].slice(-3);
     // Extract the first 3 unique digits from the combined sequences and store them in 'b'
-    let b = [...new Set(matchedElement.join(""))].slice(0, 3);
+    let lastNumbers = [...new Set(matchedElement.join(""))].slice(0, 3);
 
     // Check if 'a' is in ascending or descending order and return true if either is true
-    if (a == a.sort((a, b) => a - b) || a == a.sort((a, b) => b - a))
+    if (
+      firstNumbers == firstNumbers.sort((a, b) => a - b) ||
+      firstNumbers == firstNumbers.sort((a, b) => b - a)
+    )
       return true;
     // This section appears to be incomplete and doesn't affect the return value
-    if (b == b.sort((a, b) => a - b) || b == b.sort((a, b) => b - a))
+    if (
+      lastNumbers == lastNumbers.sort((a, b) => a - b) ||
+      lastNumbers == lastNumbers.sort((a, b) => b - a)
+    )
       return true;
   } else {
     return false;
