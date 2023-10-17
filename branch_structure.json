@@ -1,0 +1,18 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "ch/improuvment",
+    "main",
+    "origin"
+  ],
+  "parent": {
+    "ch/improuvment": "main",
+    "main": null,
+    "origin": "main"
+  },
+  "order": [
+    "main",
+    "ch/improuvment",
+    "origin"
+  ]
+}
