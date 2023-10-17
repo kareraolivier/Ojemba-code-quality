@@ -43,25 +43,25 @@ export default function isValidPassword(password = "") {
   if (typeof password !== "string") password = String(password);
   if (password.length !== 10) return false;
 
-  // Check if the password contains only numbers. If it does, return false.
+  // Check if the password contains only numbers.
   if (/^[0-9]+$/.test(password)) return false;
 
-  // Check if the password contains only alphabetic characters (both lowercase and uppercase). If it does, return false.
+  // Check if the password contains only alphabetic characters (both lowercase and uppercase).
   if (/^[A-Za-z]+$/.test(password)) return false;
 
-  // Check if the password contains at least one character that is not alphanumeric (i.e., special characters). If it doesn't, return false.
+  // Check if the password contains at least one character that is not alphanumeric (i.e., special characters).
   if (/[^A-Za-z0-9]/.test(password)) return false;
 
-  // Check if the password contains at least one lowercase letter. If it doesn't, return false.
+  // Check if the password contains at least one lowercase letter.
   if (!/[a-z]/.test(password)) return false;
 
-  // Check if the password contains at least one uppercase letter. If it doesn't, return false.
+  // Check if the password contains at least one uppercase letter.
   if (!/[A-Z]/.test(password)) return false;
 
-  // Check if the password is included in a list of forbidden passwords. If it is, return false.
+  // Check if the password is included in a list of forbidden passwords.
   if (forbiddenPasswords.includes(password)) return false;
 
-  // Check if the password contains a sequence of three or more digits in ascending or descending order. If it does, return false.
+  // Check if the password contains a sequence of three or more digits in ascending or descending order.
   if (checkAscAndDesc(password)) return false;
 
   const setOfPassword = new Set([...password]);
