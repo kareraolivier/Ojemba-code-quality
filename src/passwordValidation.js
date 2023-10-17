@@ -10,18 +10,18 @@ export const checkAscAndDesc = (str) => {
 
   // Check if there are at least 5 different digits in the input string
   if (matchedElement && [...new Set(matchedElement.join(""))].length > 4) {
-    // Extract the last 3 unique digits from the combined sequences and store them in 'a'
+    // Extract the last 3 unique digits
     const firstNumbers = [...new Set(matchedElement.join(""))].slice(-3);
-    // Extract the first 3 unique digits from the combined sequences and store them in 'b'
+    // Extract the first 3 unique digits
     const lastNumbers = [...new Set(matchedElement.join(""))].slice(0, 3);
 
-    // Check if 'firstNumbers' is in ascending or descending order and return true if either is true
+    // Check if 'firstNumbers' is in ascending or descending order
     if (
       firstNumbers == firstNumbers.sort((a, b) => a - b) ||
       firstNumbers == firstNumbers.sort((a, b) => b - a)
     )
       return true;
-    // Check if 'lastNumbers' is in ascending or descending order and return true if either is true
+    // Check if 'lastNumbers' is in ascending or descending order
     if (
       lastNumbers == lastNumbers.sort((a, b) => a - b) ||
       lastNumbers == lastNumbers.sort((a, b) => b - a)
@@ -39,7 +39,7 @@ export const checkAscAndDesc = (str) => {
  * @returns {boolean}
  */
 export default function isValidPassword(password = "") {
-  // The following line ensures, that password is always a string, like the number 128 -> string "128"
+  // The following line ensures, that password is always a string.
   if (typeof password !== "string") password = String(password);
   if (password.length !== 10) return false;
 
