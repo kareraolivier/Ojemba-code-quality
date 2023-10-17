@@ -9,7 +9,7 @@ export default function penaltyPoints(password = "") {
   // The regex to check character doublication
   const checkDoublication = /(.)\1/g;
 
-  // The regex to check character that repeat more than double
+  // The regex to check consecutive character that repeat more than double
   const checkMoreThanDouble = /(.)\1{2,}/g;
 
   // The following line ensures, that password is null, undefined and empty return 0
@@ -25,8 +25,4 @@ export default function penaltyPoints(password = "") {
     return matches.length;
   }
   return 0;
-  // * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-  // * * * INSERT YOUR CODE HERE * * * * * * * * * * * * * *
-  // * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-  //
 }
